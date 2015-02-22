@@ -1,4 +1,5 @@
 apply plugin: 'war'
+//apply plugin: 'jacoco'
 
 def javaVersion = 1.8
 def defaultEncoding = 'UTF-8'
@@ -16,7 +17,13 @@ repositories {
 dependencies {
   providedCompile 'org.projectlombok:lombok:1.16.2'
   providedCompile 'org.jboss.spec:jboss-javaee-7.0:1.0.2.Final'
-  
+}
+
+repositories {
+  maven { url 'http://repository.jboss.org/nexus/content/groups/public' }
+}
+
+dependencies {
   testCompile 'junit:junit:4.12'
   testCompile 'org.jboss.arquillian.junit:arquillian-junit-container:1.1.7.Final'
   testCompile 'org.wildfly:wildfly-arquillian-container-remote:8.2.0.Final'
@@ -25,3 +32,10 @@ dependencies {
   testCompile 'org.jboss.resteasy:resteasy-client:3.0.10.Final'
   testCompile 'org.jboss.resteasy:resteasy-jackson-provider:3.0.10.Final'
 }
+
+dependencies {
+  testCompile 'org.jboss.arquillian.extension:arquillian-jacoco:1.0.0.Alpha7'
+  testCompile 'org.jacoco:org.jacoco.core:0.7.2.201409121644'
+}
+
+//jacoco.toolVersion = '0.7.2.201409121644'

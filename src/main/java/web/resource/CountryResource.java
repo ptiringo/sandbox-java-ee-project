@@ -23,8 +23,8 @@ public class CountryResource {
   @GET
   @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
   @Transactional
-  public List<Country> getAllCountries() {
-    return repository.getAllCountries();
+  public List<Country> getAll() {
+    return repository.getAll();
   }
 
 }

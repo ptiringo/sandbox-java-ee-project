@@ -16,7 +16,7 @@ public class CountryRepository {
   private EntityManager em;
 
   @Transactional
-  public List<Country> getAllCountries() {
+  public List<Country> getAll() {
     return em.createNamedQuery(Country.JPQL_SELECE_ALL, Country.class).getResultList();
   }
 
