@@ -1,5 +1,5 @@
 apply plugin: 'war'
-//apply plugin: 'jacoco'
+apply plugin: 'jacoco'
 
 def javaVersion = 1.8
 def defaultEncoding = 'UTF-8'
@@ -33,9 +33,11 @@ dependencies {
   testCompile 'org.jboss.resteasy:resteasy-jackson-provider:3.0.10.Final'
 }
 
+def jacocoVersion = '0.7.2.201409121644'
+
 dependencies {
   testCompile 'org.jboss.arquillian.extension:arquillian-jacoco:1.0.0.Alpha7'
-  testCompile 'org.jacoco:org.jacoco.core:0.7.2.201409121644'
+  testCompile "org.jacoco:org.jacoco.core:${jacocoVersion}"
 }
 
-//jacoco.toolVersion = '0.7.2.201409121644'
+jacoco.toolVersion = jacocoVersion

@@ -7,15 +7,6 @@
 		<jta-data-source>java:global/jdbc/example</jta-data-source>
 		<class>entity.Country</class>
 		<properties>
-			<property name="javax.persistence.schema-generation.database.action"
-				value="drop-and-create" />
-			<property name="javax.persistence.schema-generation.create-source"
-				value="metadata" />
-			<property name="javax.persistence.schema-generation.drop-source"
-				value="metadata" />
-			<property name="javax.persistence.sql-load-script-source"
-				value="insert-initial-data.sql" />
-
 			<property name="javax.persistence.database-product-name"
 				value="H2" />
 			<property name="javax.persistence.database-major-version"
