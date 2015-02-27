@@ -27,7 +27,6 @@ dependencies {
   testCompile 'junit:junit:4.12'
   testCompile 'org.jboss.arquillian.junit:arquillian-junit-container:1.1.7.Final'
   testCompile 'org.wildfly:wildfly-arquillian-container-remote:8.2.0.Final'
-  testCompile 'org.jboss.arquillian.protocol:arquillian-protocol-servlet:1.1.7.Final'
   
   testCompile 'org.jboss.resteasy:resteasy-client:3.0.10.Final'
   testCompile 'org.jboss.resteasy:resteasy-jackson-provider:3.0.10.Final'
