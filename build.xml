@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<project>
+
+	<property name="sql_dir" location="build/erm" />
+	<property name="erm" location="sample.erm" />
+	<property name="ddl" value="create-schema.sql" />
+	<property name="dml_name" value="initialization" />
+
+	<target name="resetDB">
+		<!-- スキーマ構築 DDL の作成 -->
+		<ermaster.ddl diagramFile="${erm}" outputfile="${sql_dir}/${ddl}" />
+
+		<!-- 初期データ登録スクリプトの作成 -->
+		<ermaster.testdata diagramfile="${erm}" outputdir="${sql_dir}" format="0">
+			<testdata name="${dml_name}" />
+		</ermaster.testdata>
+
+		<!-- スキーマ構築スクリプトの実行 -->
+		<exec executable="java">
+			<arg line="-cp lib/h2-1.4.185.jar" />
+			<arg value="org.h2.tools.RunScript" />
+			<arg line="-url jdbc:h2:~/test" />
+			<arg line="-script ${sql_dir}/${ddl}" />
+			<arg value="-continueOnError" />
+		</exec>
+
+		<!-- 初期データ登録スクリプトの実行 -->
+		<exec executable="java">
+			<arg line="-cp lib/h2-1.4.185.jar" />
+			<arg value="org.h2.tools.RunScript" />
+			<arg line="-url jdbc:h2:~/test" />
+			<arg line="-script ${sql_dir}/${dml_name}.sql" />
+		</exec>
+	</target>
+
+</project>

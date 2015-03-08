@@ -21,6 +21,6 @@ public class Country implements Serializable {
   @GeneratedValue
   private long id;
   private String name;
-  private int population;
+  private long population;
 
 }
