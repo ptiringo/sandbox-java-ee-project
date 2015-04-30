@@ -13,8 +13,6 @@
 				value="metadata" />
 			<property name="javax.persistence.schema-generation.drop-source"
 				value="metadata" />
-			<property name="javax.persistence.sql-load-script-source"
-				value="insert-initial-data.sql" />
 
 			<property name="javax.persistence.database-product-name"
 				value="H2" />

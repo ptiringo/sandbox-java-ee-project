@@ -1,0 +1,11 @@
+country:
+  - id: 1
+    name: Japan
+    population: 127300000
+  - id: 2
+    name: USA
+    population: 318900000
+  - id: 3
+    name: China
+    population: 1357000000
+  
