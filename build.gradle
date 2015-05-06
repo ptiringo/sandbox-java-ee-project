@@ -32,7 +32,9 @@ dependencyManagement {
 
 dependencies {
   providedCompile 'org.projectlombok:lombok:1.16.2'
-  compile 'com.wordnik:swagger-jersey2-jaxrs:1.5.1-M2'
+  compile('com.wordnik:swagger-jersey2-jaxrs:1.5.1-M2') {
+    exclude module: 'jersey-media-multipart'
+  }
 //  compile ('com.wordnik:swagger-jaxrs_2.10:1.3.12') {
 //    exclude module: 'jsr311-api'
 //  }
